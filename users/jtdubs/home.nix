@@ -24,7 +24,6 @@
     git
     gnome.seahorse
     google-chrome
-    home-manager
     mako
     nerdfonts
     pass
@@ -63,6 +62,7 @@
   };
 
   # Program config.
+  programs.home-manager.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
