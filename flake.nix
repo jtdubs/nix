@@ -28,11 +28,11 @@
         specialArgs = { inherit nixos-hardware stable unstable; };
         inherit system;
         modules = [
-          ./hosts/decl/configuration.nix
+          ./hosts/decl
           inputs.home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
+            home-manager.users.jtdubs = import ./users/jtdubs;
             home-manager.extraSpecialArgs = { inherit stable unstable; };
           }
         ];
