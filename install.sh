@@ -1,7 +1,21 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 set -e
-set -x
+
+HOST=$1
+
+if [ -z "$HOST" ]
+then
+    echo "usage: ./install.sh [HOST]"
+    exit 1
+fi
+
+CURRENT_HOST=$(hostname)
+if [ "$HOST" = "$CURRENT_HOST" ]
+then
+    echo "already installed; use ./update.sh instead."
+    exit 1
+fi
 
 echo Formatting disks...
 sudo nix \
@@ -9,7 +23,7 @@ sudo nix \
   run github:nix-community/disko               \
   --                                           \
   --mode disko                                 \
-  ./hosts/decl/disks.nix
+  ./hosts/$HOST/disks.nix
 
 echo Installing NixOS...
-sudo nixos-install --flake .#decl
+sudo nixos-install --flake ".#$HOST"
