@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ inputs, outputs, lib, pkgs, ... }:
 {
   # Allow unfree packages.
   nixpkgs = {
