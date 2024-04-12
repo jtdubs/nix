@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 {
   imports =
     [
@@ -50,6 +50,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
   # Packages
   programs.zsh.enable = true;

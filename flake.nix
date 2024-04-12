@@ -27,6 +27,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
             }
           ];
         };
