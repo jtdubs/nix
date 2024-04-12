@@ -2,38 +2,37 @@
   description = "nix-configurations";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
-  outputs = inputs@{ self, home-manager, nixos-hardware, ... }:
+  outputs = inputs@{ self, ... }:
   let
     system = "x86_64-linux";
-    nixpkgsConfig = {
-      inherit system;
-      config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
     };
-    nixpkgs.from = {
-      stable = import inputs.nixpkgs nixpkgsConfig;
-      unstable = import inputs.nixpkgs-unstable nixpkgsConfig;
-    };
+    stable = import inputs.nixpkgs-stable { inherit system config; };
+    unstable = import inputs.nixpkgs-unstable { inherit system config; };
+    nixos-hardware = inputs.nixos-hardware;
   in {
     nixosConfigurations = {
-      decl = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit nixos-hardware nixpkgs; };
+      decl = inputs.nixpkgs-stable.lib.nixosSystem {
+        specialArgs = { inherit nixos-hardware stable unstable; };
         inherit system;
         modules = [
           ./hosts/decl/configuration.nix
-          home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
-            home-manager.extraSpecialArgs = { inherit nixpkgs; };
+            home-manager.extraSpecialArgs = { inherit stable unstable; };
           }
         ];
       };

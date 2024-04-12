@@ -1,4 +1,4 @@
-{ nixpkgs, nixos-hardware, ... }:
+{ nixos-hardware, stable, unstable, ... }:
 {
   imports =
     [
@@ -15,7 +15,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = nixpkgs.from.stable.linuxPackagesFor nixpkgs.from.stable.linux_latest;
+  boot.kernelPackages = stable.linuxPackagesFor stable.linux_latest;
 
   # Security
   security.polkit.enable = true;
@@ -45,7 +45,7 @@
     isNormalUser = true;
     description = "Justin Dubs";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    shell = nixpkgs.from.stable.zsh;
+    shell = stable.zsh;
   };
 
   # Allow unfree packages
@@ -54,7 +54,7 @@
 
   # Packages
   programs.zsh.enable = true;
-  environment.systemPackages = with nixpkgs.from.stable; [
+  environment.systemPackages = with stable; [
     curl
     git
     neovim
@@ -79,7 +79,7 @@
         default_session = {
           user = "greeter";
           command = ''
-            ${nixpkgs.from.stable.greetd.tuigreet}/bin/tuigreet \
+            ${stable.greetd.tuigreet}/bin/tuigreet \
               --time \
               --asterisks \
               --user-menu \

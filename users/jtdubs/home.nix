@@ -1,4 +1,4 @@
-{ lib, nixpkgs, ... }:
+{ lib, stable, unstable, ... }:
 {
   # Home Manager info
   home = {
@@ -7,7 +7,7 @@
   };
 
   # Packages.
-  home.packages = (with nixpkgs.from.stable; [
+  home.packages = (with stable; [
     brightnessctl
     btop
     fzf
@@ -20,7 +20,7 @@
     tofi
     waybar
     wob
-  ]) ++ (with nixpkgs.from.unstable; [
+  ]) ++ (with unstable; [
     alacritty
   ]);
 
@@ -75,7 +75,7 @@
     viAlias = true;
     vimAlias = true;
     extraConfig = lib.fileContents xdg/nvim/init.vim;
-    plugins = with nixpkgs.from.stable.vimPlugins; [
+    plugins = with stable.vimPlugins; [
       securemodelines
       fzf-vim
       vim-rooter
