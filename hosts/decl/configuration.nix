@@ -53,6 +53,12 @@
 
   # Packages
   programs.zsh.enable = true;
+  environment.systemPackages = with pkgs; [
+    curl
+    git
+    neovim
+    tmux
+  ];
 
   # GUI
   services = {
