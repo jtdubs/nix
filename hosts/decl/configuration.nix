@@ -2,12 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
-    [ 
-      <nixos-hardware/framework/13-inch/13th-gen-intel>
+    [
+      inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
       ./hardware-configuration.nix
     ];
 

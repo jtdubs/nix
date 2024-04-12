@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, ... }:
   {
     nixosConfigurations = {
       decl = nixpkgs.lib.nixosSystem {
@@ -13,6 +14,9 @@
         modules = [
           ./hosts/decl/configuration.nix
         ];
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
   };
