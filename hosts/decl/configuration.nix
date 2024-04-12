@@ -1,15 +1,16 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
-
 {
   imports =
     [
       inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
       ./hardware-configuration.nix
     ];
+
+  # Nix settings
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -64,15 +65,15 @@
       enable = true;
       settings = {
         default_session = {
-	  user = "greeter";
-	  command = ''
+          user = "greeter";
+          command = ''
             ${pkgs.greetd.tuigreet}/bin/tuigreet \
               --time \
               --asterisks \
               --user-menu \
               --cmd sway
-            '';
-	};
+          '';
+        };
       };
     };
   };
@@ -85,8 +86,6 @@
     TTYVHangup = true;
     TTYVDisallocate = true;
   };
-
-  # Hardware support
   hardware = {
     enableAllFirmware = true;
     opengl = {
@@ -94,18 +93,14 @@
       driSupport = true;
     };
   };
+
+  # Sound
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Nix settings
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # NixOS Release
   system.stateVersion = "23.11";
