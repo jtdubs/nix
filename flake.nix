@@ -24,6 +24,7 @@
   in {
     nixosConfigurations = {
       decl = inputs.nixpkgs-stable.lib.nixosSystem {
+        pkgs = stable;
         specialArgs = { inherit nixos-hardware stable unstable; };
         inherit system;
         modules = [
