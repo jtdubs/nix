@@ -57,7 +57,12 @@
     curl
     git
     neovim
+    sway
+    swayidle
+    swaylock
     tmux
+    xdg-utils
+    wl-clipboard
   ];
 
   # GUI

@@ -19,23 +19,15 @@
     alacritty
     brightnessctl
     btop
-    curl
     fzf
-    git
     gnome.seahorse
     google-chrome
-    mako
     nerdfonts
     pass
     pavucontrol
-    sway
-    swayidle
-    swaylock
-    tmux
+    mako
     tofi
-    xdg-utils
     waybar
-    wl-clipboard
     wob
   ];
 
