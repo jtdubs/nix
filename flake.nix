@@ -11,11 +11,15 @@
   };
 
   outputs = { nixpkgs, nixos-hardware, home-manager, ... }:
+  let
+    pkgs = import nixpkgs { };
+  in
   {
-    nixosConfigurations = {
-      decl = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = with pkgs; {
+      decl = lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          nixos-hardware.nixosModules.framework-13th-gen-intel
           ./hosts/decl/configuration.nix
           home-manager.nixosModules.home-manager
           {

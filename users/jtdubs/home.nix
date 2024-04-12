@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # Allow unfree packages.
   nixpkgs = {
@@ -16,7 +16,7 @@
 
   # Packages.
   home.packages = with pkgs; [
-    unstable.alacritty
+    alacritty
     brightnessctl
     btop
     curl
@@ -83,10 +83,7 @@
     };
   };
   programs.starship.enable = true;
-  programs.vscode = {
-    enable = true;
-    package = unstable.vscode;
-  };
+  programs.vscode.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
