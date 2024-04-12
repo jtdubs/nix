@@ -11,26 +11,32 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
-    let
-      inherit (self) outputs;
-    in
-    {
-      overlays = import ./overlays { inherit inputs; };
-      nixosConfigurations = {
-        decl = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/decl/configuration.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs outputs; };
-            }
-          ];
-        };
+  outputs = inputs@{ self, home-manager, ... }:
+  let
+    system = "x86_64-linux";
+    nixpkgsConfig = {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    nixpkgs.from = {
+      stable = import inputs.nixpkgs nixpkgsConfig;
+      unstable = import inputs.nixpkgs-unstable nixpkgsConfig;
+    };
+  in {
+    nixosConfigurations = {
+      decl = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs nixpkgs; };
+        inherit system;
+        modules = [
+          ./hosts/decl/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
+            home-manager.extraSpecialArgs = { inherit nixpkgs; };
+          }
+        ];
       };
     };
+  };
 }

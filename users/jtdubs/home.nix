@@ -1,12 +1,5 @@
-{ inputs, outputs, lib, pkgs, ... }:
+{ lib, nixpkgs, ... }:
 {
-  # Allow unfree packages.
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.unstable-packages
-    ];
-  };
-
   # Home Manager info
   home = {
     username = "jtdubs";
@@ -14,8 +7,7 @@
   };
 
   # Packages.
-  home.packages = with pkgs; [
-    alacritty
+  home.packages = (with nixpkgs.from.stable; [
     brightnessctl
     btop
     fzf
@@ -28,7 +20,9 @@
     tofi
     waybar
     wob
-  ];
+  ]) ++ (with nixpkgs.from.unstable; [
+    alacritty
+  ]);
 
   # Configuration.
   xdg.configFile = {
@@ -81,7 +75,7 @@
     viAlias = true;
     vimAlias = true;
     extraConfig = lib.fileContents xdg/nvim/init.vim;
-    plugins = with pkgs.vimPlugins; [
+    plugins = with nixpkgs.from.stable.vimPlugins; [
       securemodelines
       fzf-vim
       vim-rooter
