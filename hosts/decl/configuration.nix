@@ -1,8 +1,8 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ nixpkgs, nixos-harware, ... }:
 {
   imports =
     [
-      inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
+      nixos-hardware.nixosModules.framework-13th-gen-intel
       ./hardware-configuration.nix
     ];
 

@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = inputs@{ self, home-manager, ... }:
+  outputs = inputs@{ self, home-manager, nixos-hardware, ... }:
   let
     system = "x86_64-linux";
     nixpkgsConfig = {
@@ -25,7 +25,7 @@
   in {
     nixosConfigurations = {
       decl = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs nixpkgs; };
+        specialArgs = { inherit nixos-hardware nixpkgs; };
         inherit system;
         modules = [
           ./hosts/decl/configuration.nix
