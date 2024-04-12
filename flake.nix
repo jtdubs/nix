@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs = inputs@{ self, ... }:
@@ -21,11 +25,12 @@
     stable = import inputs.nixpkgs-stable { inherit system config; };
     unstable = import inputs.nixpkgs-unstable { inherit system config; };
     nixos-hardware = inputs.nixos-hardware;
+    disko = inputs.disko;
   in {
     nixosConfigurations = {
       decl = inputs.nixpkgs-stable.lib.nixosSystem {
         pkgs = stable;
-        specialArgs = { inherit nixos-hardware stable unstable; };
+        specialArgs = { inherit disko nixos-hardware stable unstable; };
         inherit system;
         modules = [
           ./hosts/decl

@@ -1,8 +1,10 @@
-{ nixos-hardware, stable, unstable, ... }:
+{ disko, nixos-hardware, stable, unstable, ... }:
 {
   imports =
     [
       nixos-hardware.nixosModules.framework-13th-gen-intel
+      disko.nixosModules.disko
+      ./disks.nix
       ./hardware-configuration.nix
     ];
 
@@ -46,6 +48,7 @@
     description = "Justin Dubs";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = stable.zsh;
+    initialPassword = "jtdubs";
   };
 
   # Packages
