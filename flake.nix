@@ -14,7 +14,6 @@
   {
     nixosConfigurations = {
       decl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           ./hosts/decl/configuration.nix
           home-manager.nixosModules.home-manager {
@@ -23,9 +22,7 @@
             home-manager.users.jtdubs = import ./users/jtdubs/home.nix;
           }
         ];
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
       };
     };
   };

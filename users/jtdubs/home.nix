@@ -4,15 +4,15 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
     };
   };
 
   # Home Manager info
-  home.username = "jtdubs";
-  home.homeDirectory = "/home/jtdubs";
-  home.stateVersion = "23.11";
-  manual.html.enable = true;
+  home = {
+    username = "jtdubs";
+    homeDirectory = "/home/jtdubs";
+  };
 
   # Packages.
   home.packages = with pkgs; [
@@ -97,4 +97,9 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
+
+  # Generate an HTML manual.
+  manual.html.enable = true;
+
+  home.stateVersion = "23.11";
 }
