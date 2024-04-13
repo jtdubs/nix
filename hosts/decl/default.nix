@@ -55,6 +55,7 @@
   programs.zsh.enable = true;
   environment.systemPackages = with stable; [
     curl
+    foot
     home-manager
     git
     neovim
