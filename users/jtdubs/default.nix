@@ -14,6 +14,7 @@
     gnome.seahorse
     google-chrome
     nerdfonts
+    nixpkgs-fmt
     pass
     pavucontrol
     pulseaudio
@@ -29,13 +30,13 @@
   xdg.configFile = {
     # Folders
     "alacritty" = { source = xdg/alacritty; recursive = true; };
-    "btop"      = { source = xdg/btop;      recursive = true; };
-    "git"       = { source = xdg/git;       recursive = true; };
-    "sway"      = { source = xdg/sway;      recursive = true; };
-    "swaylock"  = { source = xdg/swaylock;  recursive = true; };
-    "tmux"      = { source = xdg/tmux;      recursive = true; };
-    "tofi"      = { source = xdg/tofi;      recursive = true; };
-    "waybar"    = { source = xdg/waybar;    recursive = true; };
+    "btop" = { source = xdg/btop; recursive = true; };
+    "git" = { source = xdg/git; recursive = true; };
+    "sway" = { source = xdg/sway; recursive = true; };
+    "swaylock" = { source = xdg/swaylock; recursive = true; };
+    "tmux" = { source = xdg/tmux; recursive = true; };
+    "tofi" = { source = xdg/tofi; recursive = true; };
+    "waybar" = { source = xdg/waybar; recursive = true; };
     # Files
     "starship.toml".source = xdg/starship.toml;
     "nvim/colors/custom-theme.vim".source = xdg/nvim/colors/custom-theme.vim;

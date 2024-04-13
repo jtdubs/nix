@@ -16,38 +16,40 @@
   };
 
   outputs = inputs@{ self, ... }:
-  let
-    system = "x86_64-linux";
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-    stable = import inputs.nixpkgs-stable { inherit system config; };
-    unstable = import inputs.nixpkgs-unstable { inherit system config; };
-    nixos-hardware = inputs.nixos-hardware;
-    disko = inputs.disko;
-  in {
-    nixosConfigurations = {
-      decl = inputs.nixpkgs-stable.lib.nixosSystem {
-        pkgs = stable;
-        specialArgs = { inherit disko nixos-hardware stable unstable; };
-        inherit system;
-        modules = [
-          ./hosts/decl
-          inputs.home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit stable unstable; };
-          }
-        ];
+    let
+      system = "x86_64-linux";
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = _: true;
+      };
+      stable = import inputs.nixpkgs-stable { inherit system config; };
+      unstable = import inputs.nixpkgs-unstable { inherit system config; };
+      nixos-hardware = inputs.nixos-hardware;
+      disko = inputs.disko;
+    in
+    {
+      nixosConfigurations = {
+        decl = inputs.nixpkgs-stable.lib.nixosSystem {
+          pkgs = stable;
+          specialArgs = { inherit disko nixos-hardware stable unstable; };
+          inherit system;
+          modules = [
+            ./hosts/decl
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit stable unstable; };
+            }
+          ];
+        };
+      };
+      homeConfigurations = {
+        "jtdubs@decl" = inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = stable;
+          extraSpecialArgs = { inherit stable unstable; };
+          modules = [ ./users/jtdubs ];
+        };
       };
     };
-    homeConfigurations = {
-      "jtdubs@decl" = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = stable;
-        extraSpecialArgs = { inherit stable unstable; };
-        modules = [ ./users/jtdubs ];
-      };
-    };
-  };
 }
