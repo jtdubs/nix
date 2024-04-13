@@ -8,6 +8,7 @@
 
   # Packages.
   home.packages = (with stable; [
+    blender
     brightnessctl
     btop
     fzf
