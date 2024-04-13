@@ -12,6 +12,7 @@
     brightnessctl
     btop
     fzf
+    gimp
     gnome.seahorse
     google-chrome
     nerdfonts

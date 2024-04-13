@@ -120,6 +120,14 @@
     pulse.enable = true;
   };
 
+  # Printing
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
   # NixOS Release
   system.stateVersion = "23.11";
 }
