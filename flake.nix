@@ -37,10 +37,16 @@
           inputs.home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jtdubs = import ./users/jtdubs;
             home-manager.extraSpecialArgs = { inherit stable unstable; };
           }
         ];
+      };
+    };
+    homeConfigurations = {
+      "jtdubs@decl" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = stable;
+        extraSpecialArgs = { inherit stable unstable; };
+        modules = [ ./users/jtdubs ];
       };
     };
   };
