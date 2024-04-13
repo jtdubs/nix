@@ -16,6 +16,7 @@
     nerdfonts
     pass
     pavucontrol
+    pulseaudio
     mako
     tofi
     waybar
