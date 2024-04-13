@@ -6,4 +6,5 @@ HOST=$(hostname)
 
 nix flake update
 nix flake check
-sudo nixos-rebuild --flake ".#$HOST" switch
+. apply-os.sh
+. apply-home.sh
