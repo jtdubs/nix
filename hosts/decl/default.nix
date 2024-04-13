@@ -54,6 +54,7 @@
   # Packages
   programs.zsh.enable = true;
   environment.systemPackages = with stable; [
+    brlaser
     curl
     foot
     home-manager
