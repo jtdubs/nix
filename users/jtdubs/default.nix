@@ -31,6 +31,7 @@
     slurp           # screenshot tool
     tofi            # launch menu
     waybar          # status bar
+    wlay            # output manager
     wob             # notification bars
   ]) ++ (with unstable; [
     alacritty       # terminal emulator
