@@ -16,6 +16,7 @@
     fzf             # fuzzy search
     # utils
     feh             # image viewer
+    libnotify       # desktop notifications
     gnome.seahorse  # keyring
     libnotify       # desktop notifications
     nerdfonts       # fonts
@@ -35,6 +36,7 @@
   ]) ++ (with unstable; [
     alacritty       # terminal emulator
     btop            # better top
+    kanshi
   ]);
 
   # Large pointer
@@ -58,6 +60,7 @@
     "alacritty" = { source = xdg/alacritty; recursive = true; };
     "btop" = { source = xdg/btop; recursive = true; };
     "git" = { source = xdg/git; recursive = true; };
+    "kanshi" = { source = xdg/kanshi; recursive = true; };
     "mako" = { source = xdg/mako; recursive = true; };
     "sway" = { source = xdg/sway; recursive = true; };
     "swaylock" = { source = xdg/swaylock; recursive = true; };
@@ -121,6 +124,31 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  # Services
+  systemd.user.services.kanshi = {
+    Unit = {
+      Description = "Dynamic output configuration";
+      Documentation = "man:kanshi(1)";
+      PartOf = "graphical-session.target";
+      After = "graphical-session-pre.target";
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${stable.kanshi}/bin/kanshi";
+      ExecStartPre = "/run/current-system/sw/bin/sleep 5";
+    };
+    Install.WantedBy = [ "sway-session.target" ];
+  };
+  systemd.user.targets.sway-session = {
+    Unit = {
+      Description = "Sway compositor session";
+      Documentation = "man:systemd.special(7)";
+      BindsTo="graphical-session.target";
+      Wants="graphical-session-pre.target";
+      After="graphical-session-pre.target";
+    };
   };
 
   # Generate an HTML manual

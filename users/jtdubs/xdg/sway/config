@@ -46,40 +46,7 @@ input "type:touchpad" {
 }
 
 ## Outputs
-output * bg #181818 solid_color
-
-set $laptop "eDP-1"
-
-output $laptop {
-    mode 2256x1504@59.999Hz
-    position 1920 0
-    scale 2
-    scale_filter smart
-}
-
-output "DP-1" {
-    mode 3840x2160@60Hz
-    position 0 0
-    scale 2
-    scale_filter smart
-}
-
-output "DP-4" {
-    mode 3840x2160@60Hz
-    position 0 0
-    scale 2
-    scale_filter smart
-}
-
-focus output "DP-1"
-focus output "DP-4"
-
-workspace 1 output "DP-1"
-workspace 1 output "DP-4"
-workspace 2 output $laptop
-
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# output * bg #181818 solid_color
 
 ## Default mode
 mode "default" {
@@ -176,3 +143,7 @@ mode "default" {
 }
 
 include /etc/sway/config.d/*
+
+# Start systemd sway session
+exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target

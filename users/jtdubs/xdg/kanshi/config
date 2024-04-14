@@ -1,0 +1,10 @@
+profile home-office {
+  output DP-4 enable mode 3840x2160@60Hz scale 2
+  output eDP-1 disable
+  # exec notify-send "mode: home-office"
+}
+
+profile undocked {
+  output eDP-1 enable mode 2256x1504@59.999Hz scale 2
+  # exec notify-send "mode: undocked"
+}
