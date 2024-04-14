@@ -13,6 +13,7 @@
     btop
     fzf
     gimp
+    grim
     gnome.seahorse
     google-chrome
     nerdfonts
@@ -21,6 +22,7 @@
     pavucontrol
     pulseaudio
     mako
+    slurp
     tofi
     waybar
     wob
