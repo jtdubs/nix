@@ -92,7 +92,7 @@
               --time \
               --asterisks \
               --user-menu \
-              --cmd sway
+              --cmd "systemd-cat -t sway sway"
           '';
         };
       };

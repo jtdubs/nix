@@ -18,6 +18,7 @@
     # utils
     feh             # image viewer
     gnome.seahorse  # keyring
+    libnotify       # desktop notifications
     nerdfonts       # fonts
     nixpkgs-fmt     # nix formatter
     pass            # password store
