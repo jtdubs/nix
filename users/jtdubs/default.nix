@@ -56,6 +56,7 @@
     "alacritty" = { source = xdg/alacritty; recursive = true; };
     "btop" = { source = xdg/btop; recursive = true; };
     "git" = { source = xdg/git; recursive = true; };
+    "mako" = { source = xdg/mako; recursive = true; };
     "sway" = { source = xdg/sway; recursive = true; };
     "swaylock" = { source = xdg/swaylock; recursive = true; };
     "tmux" = { source = xdg/tmux; recursive = true; };
