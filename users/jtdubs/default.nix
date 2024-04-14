@@ -8,27 +8,31 @@
 
   # Packages
   home.packages = (with stable; [
+    # apps
     blender
-    brightnessctl
-    btop
-    feh
-    fzf
     gimp
-    grim
-    gnome.seahorse
     google-chrome
-    nerdfonts
-    nixpkgs-fmt
-    pass
-    pavucontrol
-    pulseaudio
-    mako
-    slurp
-    tofi
-    waybar
-    wob
+    # cli tools
+    btop            # better top
+    fzf             # fuzzy search
+    # utils
+    feh             # image viewer
+    gnome.seahorse  # keyring
+    nerdfonts       # fonts
+    nixpkgs-fmt     # nix formatter
+    pass            # password store
+    # sway utils
+    brightnessctl   # backlight control
+    grim            # screenshot tool
+    pavucontrol     # pulseaudio sound ui
+    pulseaudio      # pulseaudio
+    mako            # notification bars (unused)
+    slurp           # screenshot tool
+    tofi            # launch menu
+    waybar          # status bar
+    wob             # notification bars
   ]) ++ (with unstable; [
-    alacritty
+    alacritty       # terminal emulator
   ]);
 
   # Large pointer
