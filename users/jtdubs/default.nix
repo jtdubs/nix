@@ -11,6 +11,7 @@
     blender
     brightnessctl
     btop
+    feh
     fzf
     gimp
     grim
