@@ -6,7 +6,7 @@
     homeDirectory = "/home/jtdubs";
   };
 
-  # Packages.
+  # Packages
   home.packages = (with stable; [
     blender
     brightnessctl
@@ -55,13 +55,13 @@
     "nvim/colors/custom-theme.vim".source = xdg/nvim/colors/custom-theme.vim;
   };
 
-  # Environment variables.
+  # Environment variables
   home.sessionVariables = {
     BROWSER = "google-chrome-stable";
     NIXOS_OZONE_WL = "1";
   };
 
-  # Program config.
+  # Program config
   programs.home-manager.enable = true;
   programs.zsh = {
     enable = true;
@@ -109,7 +109,7 @@
     nix-direnv.enable = true;
   };
 
-  # Generate an HTML manual.
+  # Generate an HTML manual
   manual.html.enable = true;
 
   home.stateVersion = "23.11";
