@@ -26,7 +26,7 @@
     grim            # screenshot tool
     pavucontrol     # pulseaudio sound ui
     pulseaudio      # pulseaudio
-    mako            # notification bars (unused)
+    mako            # notification messages
     slurp           # screenshot tool
     tofi            # launch menu
     waybar          # status bar
