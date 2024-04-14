@@ -96,6 +96,7 @@ mode "default" {
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl get-sink-volume @DEFAULT_SINK@ | awk 'NR==1{print substr($5,1,length($5)-1)}' > $WOBSOCK
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl get-sink-volume @DEFAULT_SINK@ | awk 'NR==1{print substr($5,1,length($5)-1)}' > $WOBSOCK
     bindsym --locked XF86AudioMedia exec google-chrome-stable
+    bindsym --locked Print exec grim -g "$(slurp -d)"
 
     # Kill window
     bindsym $mod+w kill
