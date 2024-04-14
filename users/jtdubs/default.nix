@@ -43,6 +43,10 @@
   };
 
   # Config files
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
   xdg.configFile = {
     # Folders
     "alacritty" = { source = xdg/alacritty; recursive = true; };
