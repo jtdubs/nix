@@ -13,7 +13,6 @@
     gimp
     google-chrome
     # cli tools
-    btop            # better top
     fzf             # fuzzy search
     # utils
     feh             # image viewer
@@ -35,6 +34,7 @@
     wob             # notification bars
   ]) ++ (with unstable; [
     alacritty       # terminal emulator
+    btop            # better top
   ]);
 
   # Large pointer
