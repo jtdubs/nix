@@ -95,11 +95,8 @@
       t = "tmux new-session -A -s";
     };
     initExtra = ''
-      autoload -U history-search-end
-      zle -N history-beginning-search-backward-end history-search-end
-      zle -N history-beginning-search-forward-end history-search-end
-      bindkey "''${key[Up]}" history-beginning-search-backward-end
-      bindkey "''${key[Down]}" history-beginning-search-forward-end
+      bindkey "''${key[Up]}" up-line-or-search
+      bindkey "''${key[Down]}" down-line-or-search
     '';
   };
   programs.starship.enable = true;
