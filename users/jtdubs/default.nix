@@ -81,6 +81,7 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
     history = {
       save = 1000;
       size = 1000;
@@ -92,9 +93,10 @@
       enter = "nix-shell . --command zsh";
       t = "tmux new-session -A -s";
     };
-    syntaxHighlighting = {
-      enable = true;
-    };
+    initExtra = ''
+      bindkey "''${key[Up]}" history-beginning-search-backward
+      bindkey "''${key[Down]}" history-beginning-search-forward
+    '';
   };
   programs.starship.enable = true;
   programs.vscode = {
