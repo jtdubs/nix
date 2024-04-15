@@ -9,7 +9,6 @@
   # Packages
   home.packages = (with stable; [
     # apps
-    blender
     gimp
     google-chrome
     # cli tools
@@ -21,6 +20,7 @@
     nerdfonts       # fonts
     nixpkgs-fmt     # nix formatter
     pass            # password store
+    units           # dimensional analysis
     # sway utils
     brightnessctl   # backlight control
     grim            # screenshot tool
@@ -34,6 +34,7 @@
     wob             # notification bars
   ]) ++ (with unstable; [
     alacritty       # terminal emulator
+    blender         # 3d modeling
     btop            # better top
   ]);
 
