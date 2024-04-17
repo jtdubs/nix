@@ -95,6 +95,10 @@
     };
   };
 
+  # Fingerprint login
+  services.fprintd.enable = true;
+  security.pam.services.login.fprintAuth = true;
+
   # Sound
   services.pipewire = {
     enable = true;
