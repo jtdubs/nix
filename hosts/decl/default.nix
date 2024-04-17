@@ -22,7 +22,6 @@
   # Security
   security.polkit.enable = true;
   security.rtkit.enable = true;
-  security.sudo.wheelNeedsPassword = false;
 
   # Networking
   networking.hostName = "decl";
@@ -56,18 +55,18 @@
   programs.zsh.enable = true;
   programs.sway.enable = true;
   environment.systemPackages = with stable; [
-    brlaser
+    brlaser         # printer drivers
     curl
-    foot
-    home-manager
+    foot            # sway's default shell
+    home-manager    # home-manager
     git
     neovim
-    sway
+    sway            # tiling window manager
     swayidle
     swaylock
-    tmux
+    tmux            # terminal multiplexer
     xdg-utils
-    wl-clipboard
+    wl-clipboard    # wayland clipboard utils
   ];
 
   # Environment variables
@@ -95,9 +94,10 @@
     };
   };
 
-  # Fingerprint login
+  # Authentication
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
+  security.sudo.wheelNeedsPassword = false;
 
   # Sound
   services.pipewire = {
