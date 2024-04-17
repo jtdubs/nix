@@ -79,33 +79,13 @@
   services = {
     gnome.gnome-keyring.enable = true;
     xserver = {
+      enable = true;
       layout = "us";
       xkbVariant = "";
+      displayManager.gdm.enable = true;
+      displayManager.gdm.wayland = true;
+      displayManager.sessionPackages = [ stable.sway ];
     };
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command = ''
-            ${stable.greetd.tuigreet}/bin/tuigreet \
-              --time \
-              --asterisks \
-              --user-menu \
-              --cmd "systemd-cat -t sway sway"
-          '';
-        };
-      };
-    };
-  };
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal";
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVDisallocate = true;
   };
   hardware = {
     enableAllFirmware = true;
