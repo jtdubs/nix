@@ -20,9 +20,9 @@ titlebar_border_thickness 0
 titlebar_padding 0
 
 # Theme
-set $bright #84A8BA
-set $dark #181818
-set $text #C0C0C0
+set $bright #4C566A
+set $dark #2E3440
+set $text #ECEFF4
 client.focused $bright $bright $text
 client.focused_inactive $dark $dark $text
 client.unfocused $dark $dark $text
@@ -51,7 +51,7 @@ input "type:touchpad" {
 }
 
 ## Outputs
-output * bg #181818 solid_color
+output * bg #2e3440 solid_color
 
 set $laptop "eDP-1"
 
