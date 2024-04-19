@@ -5,6 +5,10 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -24,6 +28,7 @@
       };
       stable = import inputs.nixpkgs-stable { inherit system config; };
       unstable = import inputs.nixpkgs-unstable { inherit system config; };
+      vscode-extensions = inputs.nix-vscode-extensions.extensions.x86_64-linux;
       nixos-hardware = inputs.nixos-hardware;
       disko = inputs.disko;
     in
@@ -47,7 +52,7 @@
       homeConfigurations = {
         "jtdubs@decl" = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = stable;
-          extraSpecialArgs = { inherit stable unstable; };
+          extraSpecialArgs = { inherit stable unstable vscode-extensions; };
           modules = [ ./users/jtdubs ];
         };
       };

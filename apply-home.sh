@@ -4,4 +4,5 @@ set -e
 
 HOST=$(hostname)
 
-home-manager --flake ".#$USER@$HOST" switch
+home-manager --flake ".#$USER@$HOST" switch --show-trace
+rm ~/.cache/tofi-drun
