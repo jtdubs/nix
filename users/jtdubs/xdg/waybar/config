@@ -1,15 +1,20 @@
 {
-    "layer": "top",    // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 24,      // Waybar height (to be removed for auto height)
-    "spacing": 4,      // Gaps between modules (4px)
-
-    // Choose the order of th e modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock"],
-
-    // Modules configuration
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "battery",
+        "clock"
+    ],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -20,7 +25,17 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery": {
         "states": {
@@ -31,7 +46,13 @@
         "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "network": {
         "format": "{ifname}",
@@ -55,7 +76,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "tooltip": false,
         "on-click": "pavucontrol"
