@@ -4,13 +4,13 @@ font-size = 10
 hint-font = true
 
 # Text theming
-text-color = #C0C0C0
-prompt-color = #C0C0C0
-placeholder-color = #C0C0C0
-input-color = #C0C0C0
+text-color = #D8DEE9
+prompt-color = #D8DEE9
+placeholder-color = #D8DEE9
+input-color = #D8DEE9
 default-result-color = #707070
-selection-color = #303030
-selection-background = #A4C1CF
+selection-color = #2E3440
+selection-background = #D8DEE9
 
 # Layout
 prompt-text = "run: "
@@ -18,10 +18,10 @@ prompt-text = "run: "
 # Window
 width = 320
 height = 480
-background-color = #181818
+background-color = #2E3440
 outline-width = 0
 border-width = 2
-border-color = #4F7D93
+border-color = #D8DEE9
 padding-top = 4
 padding-bottom = 4
 padding-left = 4
