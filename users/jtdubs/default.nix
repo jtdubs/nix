@@ -136,9 +136,6 @@
         "window.titleBarStyle" = "custom";
         "workbench.colorTheme" = "Nord";
         "workbench.startupEditor" = "none";
-        "[systemverilog]" = {
-            "editor.defaultFormatter" = "chipsalliance.verible";
-        };
         "[rust]" = {
             "editor.defaultFormatter" = "rust-lang.rust-analyzer";
         };
