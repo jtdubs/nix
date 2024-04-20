@@ -21,10 +21,7 @@
     grim # screenshot tool
     pavucontrol # pulseaudio sound ui
     pulseaudio # pulseaudio
-    mako # notification messages
     slurp # screenshot tool
-    tofi # launch menu
-    waybar # status bar
     wlay # output manager
   ]) ++ (with unstable; [
 

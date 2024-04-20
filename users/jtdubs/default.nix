@@ -7,6 +7,7 @@
     ./alacritty.nix
     ./cursor.nix
     ./environment.nix
+    ./mako.nix
     ./neovim.nix
     ./packages.nix
     ./shell.nix
@@ -25,8 +26,6 @@
   # tmux      - tmux plugin
   # vscodium  - vscode plugin
   # btop      - built-in theme
-  # mako      - rgb values in config file
-  # tofi      - rgb values in config file
 
   # Home Manager info
   home = {
