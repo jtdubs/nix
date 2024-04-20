@@ -10,6 +10,7 @@
     ./neovim.nix
     ./packages.nix
     ./shell.nix
+    ./sway.nix
     ./tmux.nix
     ./vscodium.nix
     ./xdg.nix
@@ -20,13 +21,13 @@
   # tmux      - tmux plugin
   # vscodium  - vscode plugin
   # btop      - built-in theme
-  # alacritty - rgb values in config file
   # mako      - rgb values in config file
-  # sway      - rgb values in config file
   # swaylock  - rgb values in config file
   # tofi      - rgb values in config file
   # waybar    - rgb values in config file
   # wob       - rgb values in config file
+  # DONE sway      - rgb values in config file
+  # DONE alacritty - rgb values in config file
 
   # Home Manager info
   home = {
