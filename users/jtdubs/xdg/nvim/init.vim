@@ -105,9 +105,10 @@ require('nvim-web-devicons').setup({
   default = true;
   strict = true;
 })
+require('nvim-web-devicons').refresh()
 require('lualine').setup({
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     theme = 'nord',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
