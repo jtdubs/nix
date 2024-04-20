@@ -1,6 +1,9 @@
-{ lib, stable, unstable, vscode-extensions, ... }:
+{ lib, stable, unstable, vscode-extensions, nix-colors, ... }:
 {
+  colorScheme = nix-colors.colorSchemes.nord;
+
   imports = [
+    nix-colors.homeManagerModules.default
     ./cursor.nix
     ./environment.nix
     ./neovim.nix
@@ -10,6 +13,19 @@
     ./vscodium.nix
     ./xdg.nix
   ];
+
+  # Theme usages
+  # neovim    - colorscheme plugin
+  # tmux      - tmux plugin
+  # vscodium  - vscode plugin
+  # btop      - built-in theme
+  # alacritty - rgb values in config file
+  # mako      - rgb values in config file
+  # sway      - rgb values in config file
+  # swaylock  - rgb values in config file
+  # tofi      - rgb values in config file
+  # waybar    - rgb values in config file
+  # wob       - rgb values in config file
 
   # Home Manager info
   home = {

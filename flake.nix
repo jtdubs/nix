@@ -17,6 +17,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = inputs:
@@ -31,6 +32,7 @@
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixos-hardware = inputs.nixos-hardware;
       disko = inputs.disko;
+      nix-colors = inputs.nix-colors;
     in
     {
       nixosConfigurations = {
@@ -44,7 +46,7 @@
       homeConfigurations = {
         "jtdubs@pebble" = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = stable;
-          extraSpecialArgs = { inherit stable unstable vscode-extensions; };
+          extraSpecialArgs = { inherit stable unstable vscode-extensions nix-colors; };
           modules = [ ./users/jtdubs ];
         };
       };
