@@ -1,5 +1,6 @@
 { ... }:
 {
+  # Zsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -21,7 +22,9 @@
       bindkey "''${key[Down]}" down-line-or-search
     '';
   };
+  # Starship shell prompt
   programs.starship.enable = true;
+  # Directory-based environments
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
