@@ -1,4 +1,7 @@
 { config, unstable, ... }:
+let
+  palette = config.colorScheme.palette;
+in
 {
   home.packages = [ unstable.alacritty ];
   xdg.configFile."alacritty/alacritty.toml".text = ''
@@ -6,55 +9,55 @@
     draw_bold_text_with_bright_colors = false
 
     [colors.primary]
-    background = "#2e3440"
-    foreground = "#d8dee9"
-    dim_foreground = "#a5abb6"
+    background = "#${palette.base00}"
+    foreground = "#${palette.base04}"
+    dim_foreground = "#${palette.base03}"
 
     [colors.cursor]
-    text = "#2e3440"
-    cursor = "#d8dee9"
+    text = "#${palette.base00}"
+    cursor = "#${palette.base04}"
 
     [colors.vi_mode_cursor]
-    text = "#2e3440"
-    cursor = "#d8dee9"
+    text = "#${palette.base00}"
+    cursor = "#${palette.base04}"
 
     [colors.selection]
     text = "CellForeground"
-    background = "#4c566a"
+    background = "#${palette.base03}"
 
     [colors.search.matches]
     foreground = "CellBackground"
-    background = "#88c0d0"
+    background = "#${palette.base0C}"
 
     [colors.normal]
-    black = "#3b4252"
-    red = "#bf616a"
-    green = "#a3be8c"
-    yellow = "#ebcb8b"
-    blue = "#81a1c1"
-    magenta = "#b48ead"
-    cyan = "#88c0d0"
-    white = "#e5e9f0"
+    black = "#${palette.base01}"
+    red = "#${palette.base08}"
+    green = "#${palette.base0B}"
+    yellow = "#${palette.base0A}"
+    blue = "#${palette.base0D}"
+    magenta = "#${palette.base0E}"
+    cyan = "#${palette.base0C}"
+    white = "#${palette.base05}"
 
     [colors.bright]
-    black = "#4c566a"
-    red = "#bf616a"
-    green = "#a3be8c"
-    yellow = "#ebcb8b"
-    blue = "#81a1c1"
-    magenta = "#b48ead"
-    cyan = "#8fbcbb"
-    white = "#eceff4"
+    black = "#${palette.base03}"
+    red = "#${palette.base08}"
+    green = "#${palette.base0B}"
+    yellow = "#${palette.base0A}"
+    blue = "#${palette.base0D}"
+    magenta = "#${palette.base0E}"
+    cyan = "#${palette.base07}"
+    white = "#${palette.base06}"
 
     [colors.dim]
-    black = "#373e4d"
-    red = "#94545d"
-    green = "#809575"
-    yellow = "#b29e75"
-    blue = "#68809a"
-    magenta = "#8c738c"
-    cyan = "#6d96a5"
-    white = "#aeb3bb"
+    black = "#${palette.base00}"
+    red = "#${palette.base08}"
+    green = "#${palette.base0B}"
+    yellow = "#${palette.base0A}"
+    blue = "#${palette.base0D}"
+    magenta = "#${palette.base0E}"
+    cyan = "#${palette.base0D}"
+    white = "#${palette.base04}"
 
     [cursor]
     style = "Block"
