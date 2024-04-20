@@ -10,7 +10,6 @@
     "git" = { source = xdg/git; recursive = true; };
     "mako" = { source = xdg/mako; recursive = true; };
     "tofi" = { source = xdg/tofi; recursive = true; };
-    "waybar" = { source = xdg/waybar; recursive = true; };
     # Files
     "starship.toml".source = xdg/starship.toml;
   };

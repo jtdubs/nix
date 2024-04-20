@@ -14,6 +14,7 @@
     ./swaylock.nix
     ./tmux.nix
     ./vscodium.nix
+    ./waybar.nix
     ./wob.nix
     ./xdg.nix
   ];
@@ -25,8 +26,6 @@
   # btop      - built-in theme
   # mako      - rgb values in config file
   # tofi      - rgb values in config file
-  # waybar    - rgb values in config file
-  # wob       - rgb values in config file
 
   # Home Manager info
   home = {
