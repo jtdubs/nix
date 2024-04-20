@@ -8,7 +8,6 @@
     foot # sway's default shell
     home-manager # home-manager
     git
-    neovim
     sway # tiling window manager
     swayidle
     swaylock

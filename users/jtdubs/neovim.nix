@@ -1,16 +1,18 @@
-{ lib, stable, ... }:
+{ lib, stable, unstable, ... }:
 {
   programs.neovim = {
     enable = true;
+    package = unstable.neovim-unwrapped;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     extraConfig = lib.fileContents xdg/nvim/init.vim;
-    plugins = with stable.vimPlugins; [
+    plugins = with unstable.vimPlugins; [
       securemodelines
       fzf-vim
       vim-rooter
-      lightline-vim
+      lualine-nvim
+      nvim-web-devicons
       vim-highlightedyank
       vim-matchup
       vim-yaml

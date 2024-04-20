@@ -12,7 +12,6 @@
     feh # image viewer
     gnome.seahorse # keyring
     libnotify # desktop notifications
-    nerdfonts # fonts
     nixpkgs-fmt # nix formatter
     pass # password store
     units # dimensional analysis
@@ -33,6 +32,7 @@
     alacritty # terminal emulator
     blender # 3d modeling
     btop # better top
+    nerdfonts # fonts
   ]);
 
 }
