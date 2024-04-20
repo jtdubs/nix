@@ -11,7 +11,6 @@
     "mako" = { source = xdg/mako; recursive = true; };
     "tofi" = { source = xdg/tofi; recursive = true; };
     "waybar" = { source = xdg/waybar; recursive = true; };
-    "wob" = { source = xdg/wob; recursive = true; };
     # Files
     "starship.toml".source = xdg/starship.toml;
   };

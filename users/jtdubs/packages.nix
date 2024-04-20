@@ -26,7 +26,6 @@
     tofi # launch menu
     waybar # status bar
     wlay # output manager
-    wob # notification bars
   ]) ++ (with unstable; [
 
     blender # 3d modeling

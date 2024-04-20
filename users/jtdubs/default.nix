@@ -14,6 +14,7 @@
     ./swaylock.nix
     ./tmux.nix
     ./vscodium.nix
+    ./wob.nix
     ./xdg.nix
   ];
 
