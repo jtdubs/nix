@@ -5,7 +5,7 @@
     "clangd.path" =
       "/home/jtdubs/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd";
     "debug.allowBreakpointsEverywhere" = true;
-    "editor.fontFamily" = "CommitMono Nerd Font";
+    "editor.fontFamily" = "FiraCode Nerd Font Mono";
     "editor.fontSize" = 12;
     "editor.formatOnPaste" = true;
     "editor.formatOnSave" = true;

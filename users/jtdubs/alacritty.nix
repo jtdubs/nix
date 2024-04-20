@@ -65,9 +65,9 @@
 
     [font]
     size = 12.0
-    normal = { family = "CommitMono" }
-    bold = { family = "CommitMono" }
-    italic = { family = "CommitMono" }
+    normal = { family = "FiraCode Nerd Font Mono" }
+    bold = { family = "FiraCode Nerd Font Mono" }
+    italic = { family = "FiraCode Nerd Font Mono" }
 
     [window]
     dynamic_padding = false
