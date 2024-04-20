@@ -34,15 +34,15 @@
     in
     {
       nixosConfigurations = {
-        decl = inputs.nixpkgs-stable.lib.nixosSystem {
+        pebble = inputs.nixpkgs-stable.lib.nixosSystem {
           pkgs = stable;
           specialArgs = { inherit disko nixos-hardware stable unstable; };
           inherit system;
-          modules = [ ./hosts/decl ];
+          modules = [ ./hosts/pebble ];
         };
       };
       homeConfigurations = {
-        "jtdubs@decl" = inputs.home-manager.lib.homeManagerConfiguration {
+        "jtdubs@pebble" = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = stable;
           extraSpecialArgs = { inherit stable unstable vscode-extensions; };
           modules = [ ./users/jtdubs ];

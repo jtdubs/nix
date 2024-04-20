@@ -24,7 +24,7 @@
   security.rtkit.enable = true;
 
   # Networking
-  networking.hostName = "decl";
+  networking.hostName = "pebble";
   networking.networkmanager.enable = true;
 
   # Locale
