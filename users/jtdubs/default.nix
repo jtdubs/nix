@@ -4,6 +4,7 @@
 
   imports = [
     nix-colors.homeManagerModules.default
+    ./alacritty.nix
     ./cursor.nix
     ./environment.nix
     ./neovim.nix

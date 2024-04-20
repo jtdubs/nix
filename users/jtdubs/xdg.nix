@@ -6,7 +6,6 @@
   };
   xdg.configFile = {
     # Folders
-    "alacritty" = { source = xdg/alacritty; recursive = true; };
     "btop" = { source = xdg/btop; recursive = true; };
     "git" = { source = xdg/git; recursive = true; };
     "mako" = { source = xdg/mako; recursive = true; };

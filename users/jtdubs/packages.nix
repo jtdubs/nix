@@ -29,7 +29,6 @@
     wob # notification bars
   ]) ++ (with unstable; [
 
-    alacritty # terminal emulator
     blender # 3d modeling
     btop # better top
     nerdfonts # fonts
