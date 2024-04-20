@@ -13,6 +13,7 @@
     ./sway.nix
     ./swaylock.nix
     ./tmux.nix
+    ./tofi.nix
     ./vscodium.nix
     ./waybar.nix
     ./wob.nix
