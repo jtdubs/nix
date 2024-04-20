@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = inputs@{ self, ... }:
+  outputs = inputs:
     let
       system = "x86_64-linux";
       config = {
@@ -28,7 +28,7 @@
       };
       stable = import inputs.nixpkgs-stable { inherit system config; };
       unstable = import inputs.nixpkgs-unstable { inherit system config; };
-      vscode-extensions = inputs.nix-vscode-extensions.extensions.x86_64-linux;
+      vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixos-hardware = inputs.nixos-hardware;
       disko = inputs.disko;
     in
@@ -38,15 +38,7 @@
           pkgs = stable;
           specialArgs = { inherit disko nixos-hardware stable unstable; };
           inherit system;
-          modules = [
-            ./hosts/decl
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit stable unstable; };
-            }
-          ];
+          modules = [ ./hosts/decl ];
         };
       };
       homeConfigurations = {
