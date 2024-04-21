@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     package = unstable.vscodium;
-    mutableExtensionsDir = false;
+    mutableExtensionsDir = true;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
   };
