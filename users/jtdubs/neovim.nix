@@ -1,5 +1,8 @@
 { lib, stable, unstable, ... }:
 {
+  imports = [
+    ./neovim.theme.nix
+  ];
   programs.neovim = {
     enable = true;
     package = unstable.neovim-unwrapped;
@@ -16,7 +19,6 @@
       vim-highlightedyank
       vim-matchup
       vim-yaml
-      nord-vim
     ];
   };
 }

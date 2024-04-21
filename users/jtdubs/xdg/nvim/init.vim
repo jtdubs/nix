@@ -5,7 +5,7 @@ filetype off
 " Set Colorscheme
 "
 set termguicolors
-colorscheme nord
+colorscheme nix
 
 
 "
