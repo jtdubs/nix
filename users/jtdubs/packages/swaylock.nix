@@ -6,22 +6,22 @@ in
   xdg.configFile."swaylock/config".text = ''
     ignore-empty-password
     indicator-caps-lock
-    color=#${palette.base00}
-    inside-color=#${palette.base00}
-    inside-wrong-color=#${palette.base00}
-    inside-ver-color=#${palette.base00}
-    inside-clear-color=#${palette.base00}
-    separator-color=#${palette.base06}
-    line-color=#${palette.base00}
-    ring-color=#${palette.base06}
-    key-hl-color=#${palette.base0C}
-    ring-wrong-color=#${palette.base08}
-    text-wrong-color=#${palette.base08}
-    ring-ver-color=#${palette.base0D}
-    text-ver-color=#${palette.base0D}
-    ring-clear-color=#${palette.base09}
-    text-clear-color=#${palette.base09}
-    text-caps-lock-color=#${palette.base06}
+    color=#${palette.night0}
+    inside-color=#${palette.night0}
+    inside-wrong-color=#${palette.night0}
+    inside-ver-color=#${palette.night0}
+    inside-clear-color=#${palette.night0}
+    separator-color=#${palette.snow2}
+    line-color=#${palette.night0}
+    ring-color=#${palette.snow2}
+    key-hl-color=#${palette.frost1}
+    ring-wrong-color=#${palette.auroraRed}
+    text-wrong-color=#${palette.auroraRed}
+    ring-ver-color=#${palette.frost2}
+    text-ver-color=#${palette.frost2}
+    ring-clear-color=#${palette.auroraOrange}
+    text-clear-color=#${palette.auroraOrange}
+    text-caps-lock-color=#${palette.snow2}
     line-uses-inside
   '';
 }

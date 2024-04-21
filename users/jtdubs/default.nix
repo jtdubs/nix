@@ -1,31 +1,31 @@
 { lib, stable, unstable, vscode-extensions, nix-colors, ... }:
 {
-  # Nord
+  # Nord-inspired theme
   colorScheme = {
     slug = "nix";
     name = "Nix";
     author = "Justin Dubs <jtdubs@gmail.com>";
     palette = {
       # Polar Night
-      base00 = "2E3440";
-      base01 = "3B4252";
-      base02 = "434C5E";
-      base03 = "4C566A";
+      night0 = "2E3440";
+      night1 = "3B4252";
+      night2 = "434C5E";
+      night3 = "4C566A";
       # Snow Storm
-      base04 = "D8DEE9";
-      base05 = "E5E9F0";
-      base06 = "ECEFF4";
+      snow0 = "D8DEE9";
+      snow1 = "E5E9F0";
+      snow2 = "ECEFF4";
       # Frost
-      base07 = "8FBCBB";
-      base0C = "88C0D0";
-      base0D = "81A1C1";
-      base0F = "5E81AC";
+      frost0 = "8FBCBB";
+      frost1 = "88C0D0";
+      frost2 = "81A1C1";
+      frost3 = "5E81AC";
       # Aurora
-      base08 = "BF616A"; # Red
-      base09 = "D08770"; # Orange
-      base0A = "EBCB8B"; # Yellow
-      base0B = "A3BE8C"; # Green
-      base0E = "B48EAD"; # Purple
+      auroraRed = "BF616A";
+      auroraOrange = "D08770";
+      auroraYellow = "EBCB8B";
+      auroraGreen = "A3BE8C";
+      auroraPurple = "B48EAD";
     };
   };
 

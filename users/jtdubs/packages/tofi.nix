@@ -12,13 +12,13 @@ in
     hint-font = true
 
     # Text theming
-    text-color = #${palette.base04}
-    prompt-color = #${palette.base04}
-    placeholder-color = #${palette.base04}
-    input-color = #${palette.base04}
-    default-result-color = #${palette.base0F}
-    selection-color = #${palette.base0C}
-    selection-background = #${palette.base02}
+    text-color = #${palette.snow0}
+    prompt-color = #${palette.snow0}
+    placeholder-color = #${palette.snow0}
+    input-color = #${palette.snow0}
+    default-result-color = #${palette.frost3}
+    selection-color = #${palette.frost1}
+    selection-background = #${palette.night2}
 
     # Layout
     prompt-text = "run: "
@@ -26,10 +26,10 @@ in
     # Window
     width = 320
     height = 480
-    background-color = #${palette.base00}
+    background-color = #${palette.night0}
     outline-width = 0
     border-width = 2
-    border-color = #${palette.base04}
+    border-color = #${palette.snow0}
     padding-top = 4
     padding-bottom = 4
     padding-left = 4

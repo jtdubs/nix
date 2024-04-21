@@ -9,55 +9,55 @@ in
     draw_bold_text_with_bright_colors = false
 
     [colors.primary]
-    background = "#${palette.base00}"
-    foreground = "#${palette.base04}"
-    dim_foreground = "#${palette.base03}"
+    background = "#${palette.night0}"
+    foreground = "#${palette.snow0}"
+    dim_foreground = "#${palette.night3}"
 
     [colors.cursor]
-    text = "#${palette.base00}"
-    cursor = "#${palette.base04}"
+    text = "#${palette.night0}"
+    cursor = "#${palette.snow0}"
 
     [colors.vi_mode_cursor]
-    text = "#${palette.base00}"
-    cursor = "#${palette.base04}"
+    text = "#${palette.night0}"
+    cursor = "#${palette.snow0}"
 
     [colors.selection]
     text = "CellForeground"
-    background = "#${palette.base03}"
+    background = "#${palette.night3}"
 
     [colors.search.matches]
     foreground = "CellBackground"
-    background = "#${palette.base0C}"
+    background = "#${palette.frost1}"
 
     [colors.normal]
-    black = "#${palette.base01}"
-    red = "#${palette.base08}"
-    green = "#${palette.base0B}"
-    yellow = "#${palette.base0A}"
-    blue = "#${palette.base0D}"
-    magenta = "#${palette.base0E}"
-    cyan = "#${palette.base0C}"
-    white = "#${palette.base05}"
+    black = "#${palette.night1}"
+    red = "#${palette.auroraRed}"
+    green = "#${palette.auroraGreen}"
+    yellow = "#${palette.auroraYellow}"
+    blue = "#${palette.frost2}"
+    magenta = "#${palette.auroraPurple}"
+    cyan = "#${palette.frost1}"
+    white = "#${palette.snow1}"
 
     [colors.bright]
-    black = "#${palette.base03}"
-    red = "#${palette.base08}"
-    green = "#${palette.base0B}"
-    yellow = "#${palette.base0A}"
-    blue = "#${palette.base0D}"
-    magenta = "#${palette.base0E}"
-    cyan = "#${palette.base07}"
-    white = "#${palette.base06}"
+    black = "#${palette.night3}"
+    red = "#${palette.auroraRed}"
+    green = "#${palette.auroraGreen}"
+    yellow = "#${palette.auroraYellow}"
+    blue = "#${palette.frost2}"
+    magenta = "#${palette.auroraPurple}"
+    cyan = "#${palette.frost0}"
+    white = "#${palette.snow2}"
 
     [colors.dim]
-    black = "#${palette.base00}"
-    red = "#${palette.base08}"
-    green = "#${palette.base0B}"
-    yellow = "#${palette.base0A}"
-    blue = "#${palette.base0D}"
-    magenta = "#${palette.base0E}"
-    cyan = "#${palette.base0D}"
-    white = "#${palette.base04}"
+    black = "#${palette.night0}"
+    red = "#${palette.auroraRed}"
+    green = "#${palette.auroraGreen}"
+    yellow = "#${palette.auroraYellow}"
+    blue = "#${palette.frost2}"
+    magenta = "#${palette.auroraPurple}"
+    cyan = "#${palette.frost2}"
+    white = "#${palette.snow0}"
 
     [cursor]
     style = "Block"

@@ -13,41 +13,41 @@ in
     }
 
     window#waybar {
-        background-color: #${palette.base00};
-        color: #${palette.base06};
+        background-color: #${palette.night0};
+        color: #${palette.snow2};
         transition-property: background-color;
         transition-duration: .5s;
     }
 
     tooltip {
-        background: #${palette.base00};
-        border: 1px solid #${palette.base03};
+        background: #${palette.night0};
+        border: 1px solid #${palette.night3};
     }
 
     tooltip label {
-        color: #${palette.base06};
+        color: #${palette.snow2};
     }
 
     #workspaces button {
         padding: 0 8px;
         background-color: transparent;
-        color: #${palette.base06};
+        color: #${palette.snow2};
         border-bottom: 3px solid transparent;
     }
 
     #workspaces button:hover {
-        background: #${palette.base02};
+        background: #${palette.night2};
         box-shadow: inherit;
-        border-bottom: 3px solid #${palette.base06};
+        border-bottom: 3px solid #${palette.snow2};
     }
 
     #workspaces button.focused {
-        background-color: #${palette.base03};
-        border-bottom: 3px solid #${palette.base06};
+        background-color: #${palette.night3};
+        border-bottom: 3px solid #${palette.snow2};
     }
 
     #workspaces button.urgent {
-        background-color: #${palette.base09};
+        background-color: #${palette.auroraOrange};
     }
 
     #mode,
@@ -58,18 +58,18 @@ in
     #network {
         padding: 0 10px;
         margin: 0 4px;
-        color: #${palette.base06};
+        color: #${palette.snow2};
     }
 
     @keyframes blink {
         to {
-            color: #${palette.base06};
+            color: #${palette.snow2};
         }
     }
 
     #battery.warning:not(.charging) {
-        background: #${palette.base08};
-        color: #${palette.base06};
+        background: #${palette.auroraRed};
+        color: #${palette.snow2};
         animation-name: blink;
         animation-duration: 0.5s;
         animation-timing-function: linear;

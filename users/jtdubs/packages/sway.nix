@@ -26,9 +26,9 @@ in
     titlebar_padding 0
 
     # Theme
-    set $bright #${palette.base03}
-    set $dark #${palette.base00}
-    set $text #${palette.base06}
+    set $bright #${palette.night3}
+    set $dark #${palette.night0}
+    set $text #${palette.snow2}
     client.focused $bright $bright $text
     client.focused_inactive $dark $dark $text
     client.unfocused $dark $dark $text
@@ -57,7 +57,7 @@ in
     }
 
     ## Outputs
-    output * bg #${palette.base00} solid_color
+    output * bg #${palette.night0} solid_color
 
     set $laptop "eDP-1"
 
