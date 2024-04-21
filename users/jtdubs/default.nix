@@ -31,26 +31,12 @@
 
   imports = [
     nix-colors.homeManagerModules.default
-    ./alacritty.nix
     ./cursor.nix
     ./environment.nix
-    ./mako.nix
-    ./neovim.nix
     ./packages.nix
     ./shell.nix
-    ./sway.nix
-    ./swaylock.nix
-    ./tmux.nix
-    ./tofi.nix
-    ./vscodium.nix
-    ./waybar.nix
-    ./wob.nix
     ./xdg.nix
   ];
-
-  # Theme usages
-  # vscodium - vscode plugin
-  # btop     - built-in theme
 
   # Home Manager info
   home = {

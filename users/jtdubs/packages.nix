@@ -1,5 +1,18 @@
 { stable, unstable, ... }:
 {
+  imports = [
+    ./packages/alacritty.nix
+    ./packages/mako.nix
+    ./packages/neovim/neovim.nix
+    ./packages/swaylock.nix
+    ./packages/sway.nix
+    ./packages/tmux/tmux.nix
+    ./packages/tofi.nix
+    ./packages/vscodium/vscodium.nix
+    ./packages/waybar/waybar.nix
+    ./packages/wob.nix
+  ];
+
   home.packages = (with stable; [
     # apps
     gimp
@@ -29,5 +42,4 @@
     btop # better top
     nerdfonts # fonts
   ]);
-
 }

@@ -9,7 +9,7 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = lib.fileContents xdg/nvim/init.vim;
+    extraConfig = lib.fileContents ./neovim.init.vim;
     plugins = with unstable.vimPlugins; [
       securemodelines
       fzf-vim

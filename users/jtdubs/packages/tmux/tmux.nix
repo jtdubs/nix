@@ -15,6 +15,6 @@
     keyMode = "vi";
     customPaneNavigationAndResize = true;
     historyLimit = 1000;
-    extraConfig = lib.fileContents xdg/tmux/tmux.conf;
+    extraConfig = lib.fileContents ./tmux.conf;
   };
 }
