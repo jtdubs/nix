@@ -3,6 +3,32 @@ let
   palette = config.colorScheme.palette;
 in
 {
+  xdg.configFile."nvim/lua/theme.lua".text = ''
+    local colors = {
+      nix1  = '#${palette.base01}',
+      nix3  = '#${palette.base03}',
+      nix5  = '#${palette.base05}',
+      nix6  = '#${palette.base06}',
+      nix7  = '#${palette.base07}',
+      nix8  = '#${palette.base0C}',
+      nix13 = '#${palette.base0A}',
+    }
+    return {
+      normal = {
+        a = { fg = colors.nix1, bg = colors.nix8, gui = 'bold' },
+        b = { fg = colors.nix5, bg = colors.nix1 },
+        c = { fg = colors.nix5, bg = colors.nix3 },
+      },
+      insert = { a = { fg = colors.nix1, bg = colors.nix6, gui = 'bold' } },
+      visual = { a = { fg = colors.nix1, bg = colors.nix7, gui = 'bold' } },
+      replace = { a = { fg = colors.nix1, bg = colors.nix13, gui = 'bold' } },
+      inactive = {
+        a = { fg = colors.nix1, bg = colors.nix8, gui = 'bold' },
+        b = { fg = colors.nix5, bg = colors.nix1 },
+        c = { fg = colors.nix5, bg = colors.nix1 },
+      },
+    }
+  '';
   xdg.configFile."nvim/colors/nix.vim".text = ''
     if version > 580
       hi clear

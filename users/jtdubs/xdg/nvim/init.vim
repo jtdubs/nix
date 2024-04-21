@@ -105,11 +105,11 @@ require('nvim-web-devicons').setup({
   default = true;
   strict = true;
 })
-require('nvim-web-devicons').refresh()
+nix_theme = require('theme')
 require('lualine').setup({
   options = {
     icons_enabled = false,
-    theme = 'nord',
+    theme = nix_theme,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {

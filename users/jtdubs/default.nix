@@ -22,10 +22,9 @@
   ];
 
   # Theme usages
-  # neovim lualine - colorscheme built-in
-  # tmux           - tmux plugin
-  # vscodium       - vscode plugin
-  # btop           - built-in theme
+  # tmux     - tmux plugin
+  # vscodium - vscode plugin
+  # btop     - built-in theme
 
   # Home Manager info
   home = {
