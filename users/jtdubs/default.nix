@@ -22,7 +22,6 @@
   ];
 
   # Theme usages
-  # tmux     - tmux plugin
   # vscodium - vscode plugin
   # btop     - built-in theme
 

@@ -57,7 +57,7 @@ in
     }
 
     ## Outputs
-    output * bg #2e3440 solid_color
+    output * bg #${palette.base00} solid_color
 
     set $laptop "eDP-1"
 

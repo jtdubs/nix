@@ -6,8 +6,8 @@ in
   # Notification bars
   home.packages = [ unstable.wob ];
   xdg.configFile."wob/wob.ini".text = ''
-    border_color = D8DEE9
-    background_color = 2E3440
-    bar_color = 5E81AC
+    border_color = ${palette.base04}
+    background_color = ${palette.base00}
+    bar_color = ${palette.base0F}
   '';
 }
