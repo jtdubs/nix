@@ -6,7 +6,6 @@
   };
   xdg.configFile = {
     # Folders
-    "btop" = { source = xdg/btop; recursive = true; };
     "git" = { source = xdg/git; recursive = true; };
     # Files
     "starship.toml".source = xdg/starship.toml;

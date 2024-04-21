@@ -2,6 +2,7 @@
 {
   imports = [
     ./packages/alacritty.nix
+    ./packages/btop/btop.nix
     ./packages/mako.nix
     ./packages/neovim/neovim.nix
     ./packages/swaylock.nix
@@ -39,7 +40,6 @@
   ]) ++ (with unstable; [
 
     blender # 3d modeling
-    btop # better top
     nerdfonts # fonts
   ]);
 }
