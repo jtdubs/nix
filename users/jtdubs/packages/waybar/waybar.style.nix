@@ -61,6 +61,10 @@ in
         color: #${palette.snow2};
     }
 
+    .icon {
+        font-size: 18px;
+    }
+
     @keyframes blink {
         to {
             color: #${palette.snow2};

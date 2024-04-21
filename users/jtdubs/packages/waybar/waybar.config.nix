@@ -26,11 +26,11 @@ in
         },
         "clock": {
             "interval": 1,
-            "format": "{:%a %b %d %r}",
+            "format": "<span rise='-2pt'>{:%a %b %d %r}</span>",
             "tooltip": false
         },
         "backlight": {
-            "format": "{percent}% {icon}",
+            "format": "{percent}% <span font='16' rise='-2pt'>{icon}</span>",
             "format-icons": [
                 "",
                 "",
@@ -49,9 +49,9 @@ in
                 "warning": 30,
                 "critical": 10
             },
-            "format": "{capacity}% {icon} ",
-            "format-charging": "{capacity}% ",
-            "format-plugged": "{capacity}% ",
+            "format": "{capacity}% <span font='16' rise='-2pt'>{icon}</span>",
+            "format-charging": "{capacity}% <span font='16' rise='-2pt'></span>",
+            "format-plugged": "{capacity}% <span font='16' rise='-2pt'></span>",
             "format-icons": [
                 "",
                 "",
@@ -62,17 +62,17 @@ in
         },
         "network": {
             "format": "{ifname}",
-            "format-wifi": "{essid} ",
-            "format-ethernet": "{ipaddr} 󰈀",
+            "format-wifi": "{essid} <span font='16' rise='-2pt'></span>",
+            "format-ethernet": "{ipaddr} <span font='16' rise='-2pt'>󰈀</span>",
             "format-disconnected": "",
             "tooltip": false,
             "on-click": "alacritty -e nmtui"
         },
         "pulseaudio": {
-            "format": "{volume}% {icon} {format_source}",
-            "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": "󰖁 {icon} {format_source}",
-            "format-muted": "󰖁 {format_source}",
+            "format": "{volume}% <span font='16' rise='-2pt'>{icon}</span> {format_source}",
+            "format-bluetooth": "{volume}% <span font='16' rise='-2pt'>{icon}</span> {format_source}",
+            "format-bluetooth-muted": "󰖁 <span font='16' rise='-2pt'>{icon}</span> {format_source}",
+            "format-muted": "<span font='16' rise='-2pt'>󰖁</span> {format_source}",
             "format-source": "",
             "format-source-muted": "",
             "format-icons": {
