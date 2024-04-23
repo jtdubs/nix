@@ -6,8 +6,8 @@
   };
   xdg.configFile = {
     # Folders
-    "git" = { source = xdg/git; recursive = true; };
+    "git" = { source = ./git; recursive = true; };
     # Files
-    "starship.toml".source = xdg/starship.toml;
+    "starship.toml".source = ./starship.toml;
   };
 }

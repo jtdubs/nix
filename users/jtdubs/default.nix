@@ -33,9 +33,9 @@
     nix-colors.homeManagerModules.default
     ./cursor.nix
     ./environment.nix
-    ./packages.nix
+    ./packages
     ./shell.nix
-    ./xdg.nix
+    ./xdg
   ];
 
   # Home Manager info
