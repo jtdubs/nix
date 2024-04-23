@@ -1,17 +1,17 @@
 { stable, unstable, ... }:
 {
   imports = [
-    ./packages/alacritty.nix
+    ./packages/alacritty/alacritty.nix
     ./packages/btop/btop.nix
-    ./packages/mako.nix
+    ./packages/mako/mako.nix
     ./packages/neovim/neovim.nix
-    ./packages/swaylock.nix
-    ./packages/sway.nix
+    ./packages/swaylock/swaylock.nix
+    ./packages/sway/sway.nix
     ./packages/tmux/tmux.nix
-    ./packages/tofi.nix
+    ./packages/tofi/tofi.nix
     ./packages/vscodium/vscodium.nix
     ./packages/waybar/waybar.nix
-    ./packages/wob.nix
+    ./packages/wob/wob.nix
   ];
 
   home.packages = (with stable; [

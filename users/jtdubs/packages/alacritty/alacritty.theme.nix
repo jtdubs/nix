@@ -1,9 +1,8 @@
-{ config, unstable, ... }:
+{ config, ... }:
 let
   palette = config.colorScheme.palette;
 in
 {
-  home.packages = [ unstable.alacritty ];
   xdg.configFile."alacritty/alacritty.toml".text = ''
     [colors]
     draw_bold_text_with_bright_colors = false
