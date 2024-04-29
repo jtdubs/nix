@@ -17,6 +17,8 @@
       enter = "nix-shell . --command zsh";
       t = "tmux new-session -A -s";
       df = "duf";
+      ps = "procs";
+      grep = "rg";
     };
     initExtra = ''
       bindkey "''${key[Up]}" up-line-or-search
@@ -43,6 +45,14 @@
       "--octal-permissions"
       "--group-directories-first"
     ];
+  };
+  # Fuzzy file finder
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    tmux = {
+      enableShellIntegration = true;
+    };
   };
   # Directory-based environments
   programs.direnv = {

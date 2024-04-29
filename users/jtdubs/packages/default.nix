@@ -20,8 +20,9 @@
     google-chrome
 
     # cli tools
-    fzf # fuzzy search
     duf # better df
+    procs # better ps
+    ripgrep # better grep
 
     # utils
     feh # image viewer
