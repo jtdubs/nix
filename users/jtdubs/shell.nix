@@ -33,6 +33,16 @@
       "cd"
     ];
   };
+  # Better ls
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+    extraOptions = [
+      "--header"
+      "--octal-permissions"
+      "--group-directories-first"
+    ];
+  };
   # Directory-based environments
   programs.direnv = {
     enable = true;
