@@ -24,6 +24,15 @@
   };
   # Starship shell prompt
   programs.starship.enable = true;
+  # Smarter cd
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd"
+      "cd"
+    ];
+  };
   # Directory-based environments
   programs.direnv = {
     enable = true;
