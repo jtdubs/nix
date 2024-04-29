@@ -21,6 +21,7 @@
 
     # cli tools
     fzf # fuzzy search
+    duf # better df
 
     # utils
     feh # image viewer

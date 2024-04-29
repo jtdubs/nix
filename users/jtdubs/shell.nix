@@ -16,6 +16,7 @@
       vi = "nvim";
       enter = "nix-shell . --command zsh";
       t = "tmux new-session -A -s";
+      df = "duf";
     };
     initExtra = ''
       bindkey "''${key[Up]}" up-line-or-search
