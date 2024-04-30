@@ -7,10 +7,10 @@
     author = "Justin Dubs <jtdubs@gmail.com>";
     palette = {
       # Polar Night
-      night0 = "2E3440";
-      night1 = "3B4252";
-      night2 = "434C5E";
-      night3 = "4C566A";
+      night0 = "20242C";
+      night1 = "292E39";
+      night2 = "2E3541";
+      night3 = "353C4A";
       # Snow Storm
       snow0 = "D8DEE9";
       snow1 = "E5E9F0";
