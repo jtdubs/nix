@@ -17,7 +17,12 @@
   home.packages = (with stable; [
     # apps
     gimp
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+      ];
+    })
 
     # cli tools
     duf # better df
