@@ -1,0 +1,4 @@
+.direnv/
+.npm/
+*.vsix
+node_modules/

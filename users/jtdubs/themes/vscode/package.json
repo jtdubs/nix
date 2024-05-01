@@ -1,0 +1,47 @@
+{
+  "name": "nix-vscode-theme",
+  "displayName": "Nix Theme",
+  "description": "A Nix-managed theme",
+  "version": "0.0.1",
+  "publisher": "jtdubs",
+  "author": {
+    "name": "Justin Dubs",
+    "email": "jtdubs@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtdubs/nix-vscode-theme"
+  },
+  "engines": {
+    "vscode": "^1.12.0"
+  },
+  "categories": [ "Themes" ],
+  "keywords": [ ],
+  "badges": [ ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Nix",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nix-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "run-s clean package",
+    "install":  "run-s build install-extension",
+    "install-extension":  "codium --install-extension nix-vscode-theme-0.0.1.vsix",
+    "clean": "del *.vsix",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "del-cli": "5.0.0",
+    "npm-run-all": "4.1.5",
+    "vsce": "2.15.0"
+  },
+  "__metadata": {
+    "id": "ff080ebc-3601-469c-ae3c-4aa864e2b1c7",
+    "publisherDisplayName": "jtdubs",
+    "publisherId": "b2868861-dac3-428c-85d1-a1caffa98feb"
+  }
+}
