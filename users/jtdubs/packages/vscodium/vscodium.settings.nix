@@ -28,7 +28,7 @@
       "<C-p>" = false;
     };
     "window.titleBarStyle" = "custom";
-    "workbench.colorTheme" = "Nord";
+    "workbench.colorTheme" = "Nix";
     "workbench.startupEditor" = "none";
     "[rust]" = { "editor.defaultFormatter" = "rust-lang.rust-analyzer"; };
     "editor.wordWrap" = "off";
