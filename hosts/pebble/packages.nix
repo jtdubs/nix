@@ -14,5 +14,7 @@
     tmux # terminal multiplexer
     xdg-utils
     wl-clipboard # wayland clipboard utils
+    unzip
+    usbutils
   ];
 }
