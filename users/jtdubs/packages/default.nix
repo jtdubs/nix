@@ -1,4 +1,6 @@
 { stable, unstable, ... }:
+let godot4 = unstable.callPackage ./godot4 {};
+in
 {
   imports = [
     ./alacritty
@@ -48,6 +50,8 @@
 
     blender # 3d modeling
     nerdfonts # fonts
-    godot_4 # game engine
-  ]);
+  ]) ++ [
+
+    godot4
+  ];
 }
