@@ -1,5 +1,5 @@
 { stable, unstable, ... }:
-let godot4 = unstable.callPackage ./godot4 {};
+let godot4 = unstable.callPackage ./godot4 { };
 in
 {
   imports = [
@@ -50,6 +50,8 @@ in
 
     blender # 3d modeling
     nerdfonts # fonts
+    mono
+    dotnet-sdk_8
   ]) ++ [
 
     godot4

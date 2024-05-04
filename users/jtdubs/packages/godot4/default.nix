@@ -35,10 +35,11 @@
 , withFontconfig ? true
 , withUdev ? true
 , withTouch ? true
-, dotnet-sdk
+, dotnet-sdk_8
 , mono
-, dotnet-runtime
+, dotnet-runtime_8
 , callPackage
+, wayland-scanner
 }:
 
 assert lib.asserts.assertOneOf "withPrecision" withPrecision [ "single" "double" ];
@@ -51,8 +52,8 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "godot4-mono";
-  version = "4.2.1-stable";
-  commitHash = "b09f793f564a6c95dc76acc654b390e68441bd01";
+  version = "4.3.0-dev6";
+  commitHash = "64520fe6741d8ec3c55e0c9618d3fadcda949f63";
 
   nugetDeps = mkNugetDeps { name = "deps"; nugetDeps = import ./deps.nix; };
 
@@ -63,7 +64,7 @@ stdenv.mkDerivation rec {
       name = "${pname}-nuget-source";
       description = "A Nuget source with dependencies for ${pname}";
       deps = [ nugetDeps ];
-  };
+    };
 
   nugetConfig = writeText "NuGet.Config" ''
     <?xml version="1.0" encoding="utf-8"?>
@@ -78,7 +79,7 @@ stdenv.mkDerivation rec {
     owner = "godotengine";
     repo = "godot";
     rev = commitHash;
-    hash = "sha256-Q6Og1H4H2ygOryMPyjm6kzUB6Su6T9mJIp0alNAxvjQ";
+    hash = "sha256-mJrGdvLIA5ubTQNAp3ggEsuoUUorJffIlhn7UlsAYtM=";
   };
 
   nativeBuildInputs = [
@@ -87,8 +88,9 @@ stdenv.mkDerivation rec {
     installShellFiles
     python3
     mono
-    dotnet-sdk
-    dotnet-runtime
+    dotnet-sdk_8
+    dotnet-runtime_8
+    wayland-scanner
   ];
 
   buildInputs = [
@@ -109,8 +111,9 @@ stdenv.mkDerivation rec {
     libxkbcommon
     alsa-lib
     mono
-    dotnet-sdk
-    dotnet-runtime
+    dotnet-sdk_8
+    dotnet-runtime_8
+    wayland-scanner
   ]
   ++ lib.optional withPulseaudio libpulseaudio
   ++ lib.optional withDbus dbus
@@ -160,7 +163,7 @@ stdenv.mkDerivation rec {
 
   buildPhase = ''
     echo "Starting Build"
-    scons p=${withPlatform} target=${withTarget} precision=${withPrecision} module_mono_enabled=yes mono_glue=no
+    scons p=${withPlatform} target=${withTarget} precision=${withPrecision} module_mono_enabled=yes mono_glue=no wayland=yes
 
     echo "Generating Glue"
     if [[ ${withPrecision} == *double* ]]; then
@@ -170,11 +173,11 @@ stdenv.mkDerivation rec {
     fi
 
     echo "Building Assemblies"
-    scons p=${withPlatform} target=${withTarget} precision=${withPrecision} module_mono_enabled=yes mono_glue=yes
+    scons p=${withPlatform} target=${withTarget} precision=${withPrecision} module_mono_enabled=yes mono_glue=yes wayland=yes
 
     echo "Building C#/.NET Assemblies"
     python modules/mono/build_scripts/build_assemblies.py --godot-output-dir bin --precision=${withPrecision}
-    '';
+  '';
 
   installPhase = ''
     mkdir -p "$out/bin"
@@ -190,7 +193,7 @@ stdenv.mkDerivation rec {
       --replace "Godot Engine" "Godot Engine ${version} (Mono, $(echo "${withPrecision}" | sed 's/.*/\u&/') Precision)"
     cp icon.svg "$out/share/icons/hicolor/scalable/apps/godot.svg"
     cp icon.png "$out/share/icons/godot.png"
-    '';
+  '';
 
   meta = with lib; {
     homepage = "https://godotengine.org";
@@ -202,7 +205,7 @@ stdenv.mkDerivation rec {
   };
 
   passthru = {
-    make-deps = callPackage ./make-deps.nix {};
+    make-deps = callPackage ./make-deps.nix { };
   };
 }
 
