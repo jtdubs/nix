@@ -48,6 +48,5 @@
 
     blender # 3d modeling
     nerdfonts # fonts
-    godot_4 # game engine
   ]);
 }
