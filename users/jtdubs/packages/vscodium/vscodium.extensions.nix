@@ -2,9 +2,6 @@
 {
   programs.vscode.extensions = with vscode-extensions.vscode-marketplace; [
     aaron-bond.better-comments
-    ms-vscode.cpptools
-    ms-vscode.cpptools-extension-pack
-    ms-vscode.cpptools-themes
     mkhl.direnv
     usernamehw.errorlens
     tamasfe.even-better-toml
@@ -14,11 +11,15 @@
     jnoortheen.nix-ide
     arcticicestudio.nord-visual-studio-code
     please-build.plz-vscode
-    ms-python.vscode-pylance
-    ms-python.python
-    ms-python.debugpy
     rust-lang.rust-analyzer
     vscodevim.vim
     polymeilex.wgsl
-  ];
+  ] ++ (with vscode-extensions.vscode-marketplace-release; [
+    ms-vscode.cpptools
+    ms-vscode.cpptools-extension-pack
+    ms-vscode.cpptools-themes
+    ms-python.vscode-pylance
+    ms-python.python
+    ms-python.debugpy
+  ]);
 }

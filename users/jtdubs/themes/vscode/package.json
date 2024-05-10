@@ -30,7 +30,7 @@
   "scripts": {
     "build": "run-s clean package",
     "install":  "run-s build install-extension",
-    "install-extension":  "codium --install-extension nix-vscode-theme-0.0.1.vsix",
+    "install-extension":  "code --install-extension nix-vscode-theme-0.0.1.vsix",
     "clean": "del *.vsix",
     "package": "vsce package"
   },
