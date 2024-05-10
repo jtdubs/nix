@@ -28,6 +28,8 @@
     duf # better df
     procs # better ps
     ripgrep # better grep
+    xxd # hex dumper
+    p7zip # 7z support
 
     # utils
     feh # image viewer
