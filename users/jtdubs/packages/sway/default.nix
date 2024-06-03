@@ -97,8 +97,8 @@ in
         # Launch apps
         bindsym $mod+Return  exec alacritty
         bindsym $mod+c       exec google-chrome-stable
-        bindsym $mod+r       exec tofi-run  | xargs swaymsg exec --
-        bindsym $mod+Shift+r exec tofi-drun | xargs swaymsg exec --
+        bindsym $mod+r       exec tofi-drun | xargs swaymsg exec --
+        bindsym $mod+Shift+r exec tofi-run  | xargs swaymsg exec --
 
         # Function keys
         bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
