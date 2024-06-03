@@ -3,8 +3,8 @@
   # Zsh
   programs.zsh = {
     enable = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     history = {
       save = 1000;
@@ -39,7 +39,7 @@
   # Better ls
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableZshIntegration = true;
     extraOptions = [
       "--header"
       "--octal-permissions"

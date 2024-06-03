@@ -5,11 +5,15 @@
     gnome.gnome-keyring.enable = true;
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
-      displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = true;
-      displayManager.sessionPackages = [ stable.sway ];
+      xkb.layout = "us";
+      xkb.variant = "";
+      displayManager = {
+        gdm.enable = true;
+        gdm.wayland = true;
+      };
+    };
+    displayManager = {
+      sessionPackages = [ stable.sway ];
     };
   };
   hardware = {
