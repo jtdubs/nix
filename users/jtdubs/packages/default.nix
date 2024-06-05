@@ -48,6 +48,7 @@
     wlay # output manager
   ]) ++ (with unstable; [
 
+    inkscape # vector graphics
     blender # 3d modeling
     nerdfonts # fonts
   ]);
