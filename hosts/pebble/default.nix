@@ -36,6 +36,18 @@
   networking.hostName = "pebble";
   networking.networkmanager.enable = true;
 
+  # Virtualization
+  virtualisation.containers = {
+    enable = true;
+    registries.search = [];
+  };
+  virtualisation.podman = {
+    enable = true;
+    dockerSocket.enable = true;
+    dockerCompat = true;
+  };
+  virtualisation.oci-containers.backend = "podman";
+
   # NixOS Release
   system.stateVersion = "23.11";
 }

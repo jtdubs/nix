@@ -30,6 +30,7 @@
     ripgrep # better grep
     xxd # hex dumper
     p7zip # 7z support
+    podman-tui # podman terminal ui
 
     # utils
     feh # image viewer
@@ -38,6 +39,7 @@
     nixpkgs-fmt # nix formatter
     pass # password store
     units # dimensional analysis
+    appimage-run # run appimage apps
 
     # sway utils
     brightnessctl # backlight control
