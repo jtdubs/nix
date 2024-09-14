@@ -14,12 +14,10 @@
     rust-lang.rust-analyzer
     vscodevim.vim
     polymeilex.wgsl
-  ] ++ (with vscode-extensions.vscode-marketplace-release; [
-    ms-vscode.cpptools
     ms-vscode.cpptools-extension-pack
     ms-vscode.cpptools-themes
     ms-python.vscode-pylance
     ms-python.python
     ms-python.debugpy
-  ]);
+  ];
 }

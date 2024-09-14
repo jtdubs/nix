@@ -40,6 +40,7 @@
     pass # password store
     units # dimensional analysis
     appimage-run # run appimage apps
+    remmina # windows remote desktop
 
     # sway utils
     brightnessctl # backlight control
