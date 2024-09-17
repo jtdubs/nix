@@ -21,7 +21,7 @@ in
 
     # No titles ever
     default_border pixel 2
-    font pango:monospace 12
+    font pango:monospace 0.001
     titlebar_border_thickness 0
     titlebar_padding 0
 
