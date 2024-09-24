@@ -34,12 +34,24 @@
 
   # Networking
   networking.hostName = "pebble";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
+  networking.wireless.iwd =
+    {
+      enable = true;
+      settings = {
+        Settings = {
+          AutoConnect = true;
+        };
+      };
+    };
 
   # Virtualization
   virtualisation.containers = {
     enable = true;
-    registries.search = [];
+    registries.search = [ ];
   };
   virtualisation.podman = {
     enable = true;

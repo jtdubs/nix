@@ -49,6 +49,8 @@
     pulseaudio # pulseaudio
     slurp # screenshot tool
     wlay # output manager
+    iwgtk # gui frontend for iwd
+    wdisplays # wayland display config
   ]) ++ (with unstable; [
 
     inkscape # vector graphics

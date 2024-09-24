@@ -66,7 +66,7 @@ in
             "format-ethernet": "{ipaddr} <span font='16' rise='-2pt'>󰈀</span>",
             "format-disconnected": "",
             "tooltip": false,
-            "on-click": "alacritty -e nmtui"
+            "on-click": "iwgtk"
         },
         "pulseaudio": {
             "format": "{volume}% <span font='16' rise='-2pt'>{icon}</span> {format_source}",
